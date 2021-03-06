@@ -12,7 +12,7 @@ public class Solution {
         print(ip);          //11000000 10101000 00000001 00000010
         print(mask);        //11111111 11111111 11111110 00000000
         print(netAddress);  //11000000 10101000 00000000 00000000
-    } //
+    }
 
     public static byte[] getNetAddress(byte[] ip, byte[] mask) {
         return new byte[4];
