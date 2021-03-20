@@ -21,8 +21,21 @@ public class Snake {
     }
 
     public void move() {
-
+        if (!isAlive){
+            return;
+        } else if (direction==SnakeDirection.UP) {
+            move(0,-1);
+        } else if (direction==SnakeDirection.RIGHT) {
+            move(1,0);
+        } else if (direction==SnakeDirection.DOWN) {
+            move(0,1);
+        } else if (direction==SnakeDirection.LEFT) {
+            move(-1,0);
+        }
     }
+    public void move(int i, int j) {
+    }
+
 
     public List<SnakeSection> getSections() {
         return sections;
@@ -38,6 +51,23 @@ public class Snake {
 
     public void setDirection(SnakeDirection direction) {
         this.direction = direction;
+    }
+
+    public void checkBorders(SnakeSection head) {
+        if(head.getX()<0) {
+            isAlive=false;
+        } else if(head.getY()<0) {
+            isAlive=false;
+        } else if(head.getX()>=Room.game.getHeight()){
+            isAlive=false;
+        } else if(head.getY()>=Room.game.getWidth()) {
+            isAlive=false;
+        }
+    }
+    public void checkBody(SnakeSection head) {
+        if(sections.contains(head)) {
+            isAlive=false;
+        }
     }
 }
 
