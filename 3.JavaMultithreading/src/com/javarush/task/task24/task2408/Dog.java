@@ -44,7 +44,9 @@ public class Dog implements Pet {
      * @return экземпляр класса DogPet
      */
     public Sayable toSayable(final int i) {
-
+        class B extends Sayable {
+            
+        }
         return null;
     }
 }
