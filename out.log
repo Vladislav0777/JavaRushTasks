@@ -35143,3 +35143,22 @@ java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 2021-03-29 21:14:37 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
 
 2021-03-29 21:14:37 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2021-04-01 21:09:44 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2021-04-01 21:09:44 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.47 ----------
+
+2021-04-01 21:09:44 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2021-04-01 21:09:44 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2021-04-01 21:09:44 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2021-04-01 21:09:44 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2021-04-01 21:09:44 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2021-04-01 21:10:09 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-04-01 21:10:09 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2021-04-01 21:10:14 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2021-04-01 21:10:14 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :D:/Plugins for java/JavaRushTasks/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task24/task2412
+2021-04-01 21:10:14 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2021-04-01 21:10:30 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2021-04-01 21:10:30 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-04-01 21:10:30 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-04-01 21:10:30 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-04-01 21:10:30 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
