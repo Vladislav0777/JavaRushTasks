@@ -1,43 +1,23 @@
 package com.javarush.task.task24.task2403;
 
-import java.io.Serializable;
-import java.rmi.Remote;
-import java.util.ArrayDeque;
-import java.util.EventListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.util.stream.Collectors;
 
-/* 
-Так-с... сопоставим
-*/
+class Solution {
+    public static void main (String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-public class Solution {
-    public static class A implements Serializable {
-        protected A clone() throws CloneNotSupportedException {
-            return (A) super.clone();
+        Scanner numbers = new Scanner(reader.readLine());
+
+        List<Integer> list = new ArrayList<>();
+        while(numbers.hasNextInt()) {
+            list.add(numbers.nextInt());
         }
-    }
 
-    public static class B implements Remote {
-        protected final B clone() throws CloneNotSupportedException {
-            return (B) super.clone();
-        }
-    }
-
-    public static class C extends ArrayDeque {
-        public C clone() {
-            return (C) super.clone();
-        }
-    }
-
-    public static class D implements EventListener {
-        protected D clone() throws CloneNotSupportedException {
-            return (D) super.clone();
-        }
-    }
-
-
-
-
-    public static void main(String[] args) {
-
+        long val = list.stream().collect(Collectors.reducing(0, (a, b)->a*a*b*b));
+        System.out.println(val);
     }
 }

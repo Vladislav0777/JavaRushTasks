@@ -25,7 +25,7 @@ public class Solution {
         String[] filepart = {"change {4}", "open {2} and last {3}"};
 
         ChoiceFormat fileform = new ChoiceFormat(filelimits, filepart);
-        Format[] testFormats = {null, dateFormat, fileform};
+        Format[] testFormats = {null, null, dateFormat, fileform};
         MessageFormat pattform = new MessageFormat("{0}   {1} | {5} {6}");
         pattform.setFormats(testFormats);
 
@@ -42,13 +42,16 @@ public class Solution {
     }
 
     public static void sort(List<Stock> list) {
-        list.sort(new Comparator<Stock>() {
-            public int compare(Stock stock1, Stock stock2) {
-
-                gfgf
-            return 0;
-            }
-        });
+        Collections.sort(list, Comparator
+                        .comparing(stock -> (String)((Stock)stock).get("name"))
+                        .thenComparing(stock -> (Date)((Stock)stock).get("date"), Comparator.reverseOrder())
+                        .thenComparing(stock ->
+                                ((Stock)stock).containsKey("change")?
+                                        (double)((Stock)stock).get("change") :
+                                        (double)((Stock)stock).get("last") - (double) ((Stock)stock).get("open"),
+                        Comparator.reverseOrder()
+                        )
+        );
     }
 
     public static class Stock extends HashMap<String, Object> {
